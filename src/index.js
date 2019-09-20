@@ -1,12 +1,8 @@
-import task from './task.js';
+import task from './project.js';
 
-// project factory
+const defaultProject = task.createNewProject('default');
 
-const projectFactory = name => ({ name, taskList: [] });
-
-const defaultProject = projectFactory('default');
-
-task.addTask('Eat soup', 'Make lots of soup', '9-22', 'High', defaultProject);
+console.log(task.addTaskToProject(1, 2, 3, 4, defaultProject));
 
 const projectList = [];
 projectList[0] = defaultProject;

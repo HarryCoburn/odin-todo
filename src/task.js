@@ -7,16 +7,4 @@ const taskFactory = (title, description, dueDate, priority) => ({
   priority,
 });
 
-// list item functions
-
-const task = (() => {
-  const addTask = (title, description, dueDate, priority, project) =>
-    project.taskList.unshift(
-      taskFactory(title, description, dueDate, priority)
-    );
-  return {
-    addTask,
-  };
-})();
-
-export default task;
+export default taskFactory;
