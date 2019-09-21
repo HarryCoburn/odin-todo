@@ -1,0 +1,6 @@
+.nobull {
+  list-style: none;
+}
+li {
+  padding: 5px;
+}
