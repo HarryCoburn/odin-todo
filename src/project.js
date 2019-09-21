@@ -7,6 +7,7 @@ const projectFactory = name => ({ name, taskList: [] });
 // list item functions
 
 const task = (() => {
+  const projectList = [];
   const addTaskToProject = (title, description, dueDate, priority, project) =>
     project.taskList.unshift(
       taskFactory(title, description, dueDate, priority)
@@ -14,6 +15,7 @@ const task = (() => {
 
   const createNewProject = name => projectFactory(name);
   return {
+    projectList,
     addTaskToProject,
     createNewProject,
   };

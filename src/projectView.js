@@ -1,4 +1,5 @@
 import { header } from './initialView.js';
+import taskView from './taskView.js';
 
 const projectView = (() => {
   const projectDropLabel = document.createElement('label');
@@ -13,10 +14,10 @@ const projectView = (() => {
       .setAttribute('data-currProject', project);
     document.querySelector('label#currProject').textContent = project;
     document.querySelector('.projectDrop').remove();
+    taskView.displayTasks(project);
   };
 
   const displayDropdown = dropdown => {
-    const header = document.querySelector('div#header');
     header.appendChild(dropdown);
   };
 
