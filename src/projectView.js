@@ -1,4 +1,12 @@
+import { header } from './initialView.js';
+
 const projectView = (() => {
+  const projectDropLabel = document.createElement('label');
+  projectDropLabel.id = 'currProject';
+  projectDropLabel.textContent = 'Select Project';
+  projectDropLabel.setAttribute('data-currProject', '');
+  header.appendChild(projectDropLabel);
+
   const setProject = project => {
     document
       .querySelector('label#currProject')
@@ -30,6 +38,7 @@ const projectView = (() => {
 
   return {
     createDropdown,
+    projectDropLabel,
   };
 })();
 
