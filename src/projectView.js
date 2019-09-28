@@ -2,11 +2,13 @@ import { header } from './initialView.js';
 import taskView from './taskView.js';
 
 const projectView = (() => {
+  const projectLabel = document.createElement('div');
+  projectLabel.textContent = 'Current Project:';
   const projectDropLabel = document.createElement('label');
   projectDropLabel.id = 'currProject';
-  projectDropLabel.textContent = 'Select Project';
+  projectDropLabel.textContent = 'All';
   projectDropLabel.setAttribute('data-currProject', '');
-  header.appendChild(projectDropLabel);
+  header.append(projectLabel, projectDropLabel);
 
   const setProject = project => {
     document
@@ -18,6 +20,7 @@ const projectView = (() => {
   };
 
   const displayDropdown = dropdown => {
+    taskView.clearTaskDisplay();
     header.appendChild(dropdown);
   };
 
